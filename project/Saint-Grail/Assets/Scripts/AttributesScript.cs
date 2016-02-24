@@ -3,9 +3,11 @@ using System.Collections;
 
 namespace statistics
 {
-	enum attrName {strength, armor, faith, vitality};
+	
 
 	public class AttributesScript : MonoBehaviour {
+
+		public enum attrName {strength, armor, faith, vitality};
 
 		// Use this for initialization
 		void Start () {
@@ -20,17 +22,21 @@ namespace statistics
 			attribute [(int)attrName.vitality] = vit;
 		}
 
-		public void UpdAtt (attrName name, float upd){
-			attribute [(int)name] += upd;
-		}
+		//public void UpdAtt (int i, float upd){
+		//	attribute [i] += upd;
+		//}
 	
 		// Update is called once per frame
 		void Update () {
-			for (attrName i = attrName.strength; i < attrName.vitality; i++)
-				UpdAtt (i, 0.0);
+//			UpdAtt ((int)attrName.strength, 0.0);
+//			UpdAtt ((int)attrName.armor, 0.0);
+//			UpdAtt ((int)attrName.faith, 0.0);
+//			UpdAtt ((int)attrName.vitality, 0.0);
 		}
 
 		private float[] attribute;
 
 	}
+
+
 }
