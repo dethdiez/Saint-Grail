@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Statistics;
 
 public class Unit : MonoBehaviour {
 
@@ -12,4 +13,6 @@ public class Unit : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	private Stats stats;
 }

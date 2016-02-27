@@ -12,6 +12,4 @@ public class Hero : Unit {
 	void Update () {
 	
 	}
-
-	private HeroType type;
 }

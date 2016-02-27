@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace statistics
+namespace Statistics
 {
 	public enum statName {damage, resist, health, energy};
 
-	public class StatScript : MonoBehaviour {
+	public class Stats : MonoBehaviour {
 
 		// Use this for initialization
 		void Start () {

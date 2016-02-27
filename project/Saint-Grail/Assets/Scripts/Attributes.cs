@@ -3,16 +3,17 @@ using System.Collections;
 
 //using statistics;
 
-namespace statistics
+namespace Statistics
 {
 	public enum attrName {strength, armor, faith, vitality};
 
-	public class AttributeScript : StatScript {
+	public class Attributes : MonoBehaviour {
 
 		// Use this for initialization
 		void Start () {
 			attribute = new float[4];
 			NewAttributes ();
+			experience = new Experience();
 		}
 
 		public void NewAttributes (float str = 0, float arm = 0, float fai = 0, float vit = 0) {
