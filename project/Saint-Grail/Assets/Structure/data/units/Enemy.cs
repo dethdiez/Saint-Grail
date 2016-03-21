@@ -12,4 +12,8 @@ public class Enemy : Unit {
 	void Update () {
 	
 	}
+
+//	void OnCollisionEnter2D(Collision2D collision) {
+//		EventController.goBattle (this);
+//	}
 }

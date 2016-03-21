@@ -12,4 +12,8 @@ public class EventController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public static void goBattle(Enemy enemy) {
+		ToBattleGui.showWindow ();
+	}
 }
