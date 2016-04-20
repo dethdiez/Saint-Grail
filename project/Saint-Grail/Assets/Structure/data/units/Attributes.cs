@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace Statistics
 {
-	public enum attrName {strength, armor, faith, vitality};
+	public enum attrName {violence, protection, faith, vitality, ability};
 
 	public class Attributes : MonoBehaviour {
 
@@ -16,11 +16,12 @@ namespace Statistics
 			experience = new Experience();
 		}
 
-		public void NewAttributes (float str = 0, float arm = 0, float fai = 0, float vit = 0) {
-			attribute [(int)attrName.strength] = str;
-			attribute [(int)attrName.armor] = arm;
+		public void NewAttributes (float vio = 0, float prot = 0, float fai = 0, float vit = 0, float abil = 0) {
+			attribute [(int)attrName.violence] = vio;
+			attribute [(int)attrName.protection] = prot;
 			attribute [(int)attrName.faith] = fai;
 			attribute [(int)attrName.vitality] = vit;
+			attribute [(int)attrName.ability] = abil;
 		}
 
 		public void UpdAttribute (int name, float upd) {
@@ -29,12 +30,14 @@ namespace Statistics
 
 		//Update is called once per frame
 		void Update () {
-			UpdAttribute ((int)attrName.strength, 0);
-			UpdAttribute ((int)attrName.armor, 0);
+			UpdAttribute ((int)attrName.violence, 0);
+			UpdAttribute ((int)attrName.protection, 0);
 			UpdAttribute ((int)attrName.faith, 0);
 			UpdAttribute ((int)attrName.vitality, 0);
+			UpdAttribute ((int)attrName.ability, 0);
 		}
 
+		//
 		public float GetAttr (int name) {
 			return attribute [name];
 		}
