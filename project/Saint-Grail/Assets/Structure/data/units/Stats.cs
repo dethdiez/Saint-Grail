@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Statistics
 {
-	public enum statName {damage, resist, health, energy};
+	public enum statName {damage, resist, health, energy, luck};
 
 	public class Stats : MonoBehaviour {
 
@@ -13,11 +13,12 @@ namespace Statistics
 			NewStats ();
 		}
 
-		public void NewStats (float str=0, float arm=0, float fai=0, float vit=0){
+		public void NewStats (float str=0, float arm=0, float fai=0, float vit=0, float l=0){
 			stat [(int)statName.damage] = str;
 			stat [(int)statName.resist] = arm;
 			stat [(int)statName.health] = fai;
 			stat [(int)statName.energy] = vit;
+			stat [(int)statName.luck]   = l;
 		}
 
 		public void UpdStat (int name, float upd){
@@ -30,6 +31,7 @@ namespace Statistics
 			UpdStat ((int)statName.resist, 0);
 			UpdStat ((int)statName.health, 0);
 			UpdStat ((int)statName.energy, 0);
+			UpdStat ((int)statName.luck,   0);
 		}
 
 		public float GetStat(int name) {
