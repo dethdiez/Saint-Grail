@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 33c5f249e51b8544096b522c20081c7a
+timeCreated: 1461895539
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sprite_move_0
+    21300002: sprite_move_1
+    21300004: sprite_move_2
+    21300006: sprite_move_3
+    21300008: sprite_move_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sprite_move_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: -12}
+        - {x: -11, y: -24}
+        - {x: 11, y: -24}
+        - {x: 24, y: -13}
+        - {x: 24, y: 27}
+        - {x: 1, y: 27}
+        - {x: -23, y: 21}
+    - name: sprite_move_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 29}
+        - {x: -1, y: 29}
+        - {x: -21, y: 22}
+        - {x: -23, y: 9}
+        - {x: -23, y: -12}
+        - {x: -14, y: -24}
+        - {x: 12, y: -24}
+        - {x: 16, y: -19}
+        - {x: 24, y: -6}
+        - {x: 24, y: 19}
+    - name: sprite_move_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: -12}
+        - {x: -11, y: -24}
+        - {x: 11, y: -24}
+        - {x: 24, y: -13}
+        - {x: 24, y: 27}
+        - {x: 1, y: 27}
+        - {x: -23, y: 21}
+    - name: sprite_move_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 25}
+        - {x: 0, y: 25}
+        - {x: -18, y: 23}
+        - {x: -24, y: 19}
+        - {x: -24, y: -13}
+        - {x: -19, y: -24}
+        - {x: 9, y: -24}
+        - {x: 25, y: -8}
+        - {x: 26, y: -3}
+        - {x: 26, y: 24}
+    - name: sprite_move_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: -12}
+        - {x: -11, y: -24}
+        - {x: 11, y: -24}
+        - {x: 24, y: -13}
+        - {x: 24, y: 27}
+        - {x: 1, y: 27}
+        - {x: -23, y: 21}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -94,7 +94,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 451268, guid: a5022608841d87d43b3336236af7c704, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 451268, guid: a5022608841d87d43b3336236af7c704, type: 2}
       propertyPath: m_LocalPosition.y
@@ -122,7 +122,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 451268, guid: a5022608841d87d43b3336236af7c704, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 21272626, guid: a5022608841d87d43b3336236af7c704, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 33c5f249e51b8544096b522c20081c7a,
+        type: 3}
+    - target: {fileID: 5009926, guid: a5022608841d87d43b3336236af7c704, type: 2}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5022608841d87d43b3336236af7c704, type: 2}
@@ -338,3 +347,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuck: 0
+--- !u!1 &1837777650 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 196958, guid: a5022608841d87d43b3336236af7c704, type: 2}
+  m_PrefabInternal: {fileID: 80453069}
+--- !u!95 &1837777651
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1837777650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b694bd950cd24284b8480dc13c95db59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
