@@ -12,4 +12,8 @@ public class RenderController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public static void lockScene (bool doIt) {
+		Mover.lockScene (doIt);
+	}
 }
