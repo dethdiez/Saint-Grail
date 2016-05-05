@@ -33,11 +33,14 @@ public class Mover : MonoBehaviour {
 			} else if (inputY < 0) {
 				angle = 180 + inputX * 45;
 			}
+		} else {
+			movement = new Vector2 (0, 0);
+			isMove = false;
 		}
 	}
 
 	void FixedUpdate() {
-		if (!isLocked) {
+		//if (!isLocked) {
 			GetComponent<Rigidbody2D> ().MoveRotation (angle);
 
 			isMove = (Mathf.Abs (movement.x) > 0) || (Mathf.Abs (movement.y) > 0);
@@ -47,7 +50,7 @@ public class Mover : MonoBehaviour {
 			//anim.SetFloat ("Speed", absSpeed);
 
 			GetComponent<Rigidbody2D> ().velocity = movement;
-		}
+		//}
 	}
 
 	public static void lockScene (bool doIt) {
