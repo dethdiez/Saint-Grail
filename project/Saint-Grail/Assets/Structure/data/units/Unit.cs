@@ -14,5 +14,14 @@ public class Unit : MonoBehaviour {
 	
 	}
 
-	private Stats stats;
+	public Stats getStats() {
+		return stats;
+	}
+
+	public void setEffect(int name, int time) {
+	}
+
+	protected Stats stats;
+	protected bool[] effects;
+	protected bool[] affects;
 }

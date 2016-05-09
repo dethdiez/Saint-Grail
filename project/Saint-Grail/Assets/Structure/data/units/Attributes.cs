@@ -26,6 +26,7 @@ namespace Statistics
 
 		public void UpdAttribute (int name, float upd) {
 			attribute [name] += upd;
+
 		}
 
 		//Update is called once per frame
