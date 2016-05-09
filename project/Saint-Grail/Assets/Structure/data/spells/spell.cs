@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class spell : MonoBehaviour {
+public class Spell : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
