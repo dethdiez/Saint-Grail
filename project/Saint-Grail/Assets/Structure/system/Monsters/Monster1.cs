@@ -15,10 +15,11 @@ public class Monster1 : Enemy {
 		
 	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
+//	void OnCollisionEnter2D(Collision2D collision) {
+//		col = true;
 //		EventController.goBattle (this);
-		col = true;
-		ToBattleGui.showWindow();
-	}
+//		ToBattle.showWindow ();
+
+//	}
 
 }

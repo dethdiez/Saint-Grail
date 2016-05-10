@@ -15,7 +15,17 @@ public class EventController : MonoBehaviour {
 	}
 
 	public static void goBattle(Enemy enemy) {
-		ToBattleGui.showWindow ();
+		Debug.Log ("Event goBattle created");
+		isBattle = true;
+		ToBattle.showWindow ();
+	}
+
+	public static bool checkBattle() {
+		return isBattle;
+	}
+
+	public static void setToBattle (Unit unit, bool isHero) {
+		BattleEventController.setToBattle (unit, isHero);
 	}
 
 	public static void attributesHasChanged (Unit unit, int name, float upd) {
@@ -64,4 +74,6 @@ public class EventController : MonoBehaviour {
 	public static void setAffect(Unit unit, int name, int time, float value) {
 		unit.setAffect (name, time, value);
 	}
+
+	private static bool isBattle = false;
 }

@@ -23,6 +23,14 @@ public class Unit : MonoBehaviour {
 		return stats;
 	}
 
+	public bool getEffect (int name) {
+		return effects [name];
+	}
+
+	public affects getAffect (int name) {
+		return aff [name];
+	}
+
 	public void setEffect(int name, bool isExist) {
 		effects [name] = isExist;
 	}

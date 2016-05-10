@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : Unit {
+public class BattleEventController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,7 @@ public class Enemy : Unit {
 	
 	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
-		EventController.goBattle (this);
+	public static void setToBattle (Unit unit, bool isHero) {
+
 	}
 }

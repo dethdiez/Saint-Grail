@@ -13,15 +13,3 @@ public class HeroType : MonoBehaviour {
 	
 	}
 }
-
-public class Hunter {
-
-}
-
-public class Paladin {
-
-}
-
-public class Punisher {
-
-}
