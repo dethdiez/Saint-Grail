@@ -2,7 +2,7 @@
 using System.Collections;
 
 public enum effect {vampirism, dazzle, poison, concentrating, breakout, divineTear};
-public enum affect {missing, poison};
+public enum affect {missing, poison, regeneration};
 
 public class Effects : MonoBehaviour {
 
@@ -21,7 +21,9 @@ public class Effects : MonoBehaviour {
 	}
 
 	void dazzle (Unit defence) {
-		if (Random.Range(0.0f, 100.0f) <= 10.0f)
+		if (Random.Range (0.0f, 100.0f) <= 10.0f) {
+			EventController.setAffect (defence, (int)affect.missing, 2, 65.0f);
+		}
 			
 	}
 

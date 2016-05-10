@@ -61,5 +61,7 @@ public class EventController : MonoBehaviour {
 
 	}
 
-
+	public static void setAffect(Unit unit, int name, int time, float value) {
+		unit.setAffect (name, time, value);
+	}
 }

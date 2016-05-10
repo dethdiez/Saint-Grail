@@ -24,9 +24,14 @@ namespace Statistics
 			attribute [(int)attrName.ability] = abil;
 		}
 
-		public void UpdAttribute (int name, float upd) {
+		public float UpdAttribute (int name, float upd) {
 			attribute [name] += upd;
-
+			if (attribute [name] < 0) {
+				upd += attribute [name];
+				Debug.Log ("Warning: attribute " + name + " is < 0");
+				attribute [name] = 0;
+			}
+			return upd;
 		}
 
 		//Update is called once per frame

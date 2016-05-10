@@ -2,6 +2,11 @@
 using System.Collections;
 using Statistics;
 
+public struct affects {
+	public int time;
+	public float value;
+}
+
 public class Unit : MonoBehaviour {
 
 	// Use this for initialization
@@ -18,10 +23,16 @@ public class Unit : MonoBehaviour {
 		return stats;
 	}
 
-	public void setEffect(int name, int time) {
+	public void setEffect(int name, bool isExist) {
+		effects [name] = isExist;
+	}
+
+	public void setAffect(int name, int time, float value) {
+		aff [name].time  = time;
+		aff [name].value = value;
 	}
 
 	protected Stats stats;
 	protected bool[] effects;
-	protected bool[] affects;
+	protected affects[] aff;
 }
