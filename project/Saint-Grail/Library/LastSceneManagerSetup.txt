@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Structure/data/scenes/MainMenu.unity
+- path: Assets/Structure/data/scenes/Battle.unity
   isLoaded: 1
   isActive: 1

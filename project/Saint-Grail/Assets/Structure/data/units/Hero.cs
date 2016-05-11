@@ -11,9 +11,11 @@ public class Hero : Unit {
 	
 	// Update is called once per frame
 	void Update () {
-		if (EventController.checkBattle ()) {
-			EventController.setToBattle (this, true);
-		}
+//		if (EventController.checkBattle ()) {
+//			EventController.setToBattle (this, true);
+//		}
+
+		EventController.hero = this;
 	}
 
 	public void setType (int t) {
@@ -28,6 +30,6 @@ public class Hero : Unit {
 		return attributes;
 	}
 
-	private static int type;
-	private static Attributes attributes;
+	private int type;
+	private Attributes attributes;
 }

@@ -4,6 +4,9 @@ using Statistics;
 
 public class EventController : MonoBehaviour {
 
+	public static Hero hero;
+	public static Enemy enemy;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,9 +17,10 @@ public class EventController : MonoBehaviour {
 	
 	}
 
-	public static void goBattle(Enemy enemy) {
+	public static void goBattle(Enemy monster) {
 		Debug.Log ("Event goBattle created");
 		isBattle = true;
+		enemy = monster;
 		ToBattle.showWindow ();
 	}
 
