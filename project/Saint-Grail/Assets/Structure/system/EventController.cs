@@ -75,5 +75,10 @@ public class EventController : MonoBehaviour {
 		unit.setAffect (name, time, value);
 	}
 
+	public static void loadNew() {
+		FieldCreator.setNumber (0);
+		Application.LoadLevel ("free");
+	}
+
 	private static bool isBattle = false;
 }

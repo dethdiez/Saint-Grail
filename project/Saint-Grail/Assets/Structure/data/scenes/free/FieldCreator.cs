@@ -12,7 +12,7 @@ public class FieldCreator : MonoBehaviour {
 		field = new int[19][];
 		for (int i = 0; i < 19; i++)
 			field [i] = new int[14];
-		loadField (0);
+		loadField (fieldNumber);
 	}
 	
 	// Update is called once per frame
@@ -38,4 +38,10 @@ public class FieldCreator : MonoBehaviour {
 			break;
 		}
 	}
+
+	public static void setNumber (int num) {
+		fieldNumber = num;
+	}
+
+	private static int fieldNumber;
 }
