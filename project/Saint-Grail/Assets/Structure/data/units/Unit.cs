@@ -40,6 +40,10 @@ public class Unit : MonoBehaviour {
 		aff [name].value = value;
 	}
 
+	public void decAffectTime (int name) {
+		aff [name].time -= 1;
+	}
+
 	protected Stats stats;
 	protected bool[] effects;
 	protected affects[] aff;

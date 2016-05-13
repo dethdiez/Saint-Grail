@@ -16,15 +16,44 @@ public class Effects : MonoBehaviour {
 	
 	}
 
-	float vampirism (float damage) {
+	public static float vampirism (float damage) {
 		return damage * 0.1f;
 	}
 
-	void dazzle (Unit defence) {
+	public static void dazzle (Unit onDef) {
 		if (Random.Range (0.0f, 100.0f) <= 10.0f) {
-			EventController.setAffect (defence, (int)affect.missing, 2, 65.0f);
+			BattleEventController.setAffect (onDef, (int)affect.missing, 2, 65.0f);
 		}
-			
 	}
 
+	public static void poison (Unit onDef, float damage) {
+		if (Random.Range (0.0f, 100.0f) <= 40.0f) {
+			BattleEventController.setAffect (onDef, (int)affect.poison, 2, 0.2f * damage);
+		}
+	}
+
+	public static bool concentrating () {
+		if (Random.Range (0.0f, 100.0f) <= 10.0f) {
+			return true;
+		} else
+			return false;
+	}
+
+	public static bool breakout () {
+		if (Random.Range (0.0f, 100.0f) <= 20.0f) {
+			return true;
+		} else
+			return false;
+	}
+
+	public static bool divineTear () {
+		if (Random.Range (0.0f, 100.0f) <= 10.0f) {
+			return true;
+		} else
+			return false;
+	}
+
+	public static bool miss() {
+		return Random.Range (0.0f, 100.0f) <= 10.0f;
+	}
 }

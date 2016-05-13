@@ -53,6 +53,10 @@ namespace Statistics
 			return stat [name];
 		}
 
+		public float GetCurPoints(int name) {
+			return curPoints [name];
+		}
+
 		public void setDefaultStats (int t) {
 			switch (t) {
 			case (int)heroType.jungle:
