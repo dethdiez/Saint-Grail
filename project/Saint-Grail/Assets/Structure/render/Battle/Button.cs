@@ -21,7 +21,7 @@ public class Button : MonoBehaviour {
 		BattleEventController.defenceClick (true);
 	}
 
-//	public void defaultScale() {
-//		gameObject.GetComponent<RectTransform>().
-//	}
+	public void defaultScale() {
+		
+	}
 }

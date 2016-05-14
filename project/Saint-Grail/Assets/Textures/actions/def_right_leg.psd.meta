@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: aacbfa3ca2522614882375856615dff0
-timeCreated: 1463242949
+guid: 87312feb39901e64ba3c041c555a47b7
+timeCreated: 1463243569
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: def_right_leg_0
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -24,14 +23,14 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 8
+  cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 1
-    aniso: 16
+    filterMode: -1
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -43,39 +42,15 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.38773504, y: 0.2384807}
-  spriteBorder: {x: 28, y: 0, z: 58, w: 63}
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: def_right_leg_0
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 0
-        width: 41
-        height: 98
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20.5, y: -27}
-        - {x: 1.5, y: -49}
-        - {x: 20.5, y: -49}
-        - {x: 20.5, y: 12}
-        - {x: 12.5, y: 49}
-        - {x: -6.5, y: 49}
-        - {x: -20.5, y: 17}
-    outline:
-    - - {x: 63.5, y: 161}
-      - {x: 118.492615, y: 120.75}
-      - {x: 118.492615, y: 40.249996}
-      - {x: 63.499996, y: 0}
-      - {x: 8.507385, y: 40.250008}
-      - {x: 8.507385, y: 120.74999}
+    sprites: []
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
