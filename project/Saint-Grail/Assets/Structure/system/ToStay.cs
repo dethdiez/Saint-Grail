@@ -35,9 +35,17 @@ public class ToStay : MonoBehaviour {
 
 	public void setReady () {
 		BattleEventController.setReady (true);
+		isTrue = true;
 	}
 
 	public void setNotReady () {
 		BattleEventController.setReady (false);
+		isTrue = false;
 	}
+
+	public bool isReady () {
+		return isTrue;
+	}
+
+	private bool isTrue;
 }

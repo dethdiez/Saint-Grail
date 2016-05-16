@@ -4,6 +4,7 @@ using Statistics;
 
 public class Fight : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,24 +15,32 @@ public class Fight : MonoBehaviour {
 	
 	}
 
-	public static void step(Hero hero, Enemy enemy) {
+	public static void step() {
+		Stats heroStats = EventController.hero.getStats();
+		Stats enemyStats = EventController.enemy.getStats();
 		Debug.Log ("New fight step");
 		BattleEventController.toAttack (true);
-		hit (hero, enemy);
-		BattleEventController.toAttack (false);
-		hit (enemy, hero);
-		if (hero.getAffect ((int)affect.poison).time > 0) {
-			BattleEventController.updHealth (hero.getAffect ((int)affect.poison).value, hero);
-			hero.decAffectTime ((int)affect.poison);
+		hit (EventController.hero, EventController.enemy);
+		BattleEventController.setReady (false);
+		while (GameObject.FindGameObjectWithTag ("Hero").GetComponent<ToStay> ().isReady () || GameObject.FindGameObjectWithTag ("Enemy").GetComponent<ToStay> ().isReady ()) {
+			
 		}
-		if (enemy.getAffect ((int)affect.poison).time > 0) {
-			BattleEventController.updHealth (enemy.getAffect ((int)affect.poison).value, enemy);
-			enemy.decAffectTime ((int)affect.poison);
+		BattleEventController.toAttack (false);
+		hit (EventController.enemy, EventController.hero);
+		if (EventController.hero.getAffect ((int)affect.poison).time > 0) {
+			BattleEventController.updHealth (EventController.hero.getAffect ((int)affect.poison).value, EventController.hero);
+			EventController.hero.decAffectTime ((int)affect.poison);
+		}
+		if (EventController.enemy.getAffect ((int)affect.poison).time > 0) {
+			BattleEventController.updHealth (EventController.enemy.getAffect ((int)affect.poison).value, EventController.enemy);
+			EventController.enemy.decAffectTime ((int)affect.poison);
 		}
 	}
 
 	public static void hit (Unit onAt, Unit onDef) {
-		float damage = onAt.getStats ().GetCurPoints ((int)statName.damage);
+		Debug.Log ("Hit!");
+		float damage = onAt.getStats ().GetStat ((int)statName.damage);
+		Debug.Log ("Default damage" + damage);
 		bool isMiss = false;
 		bool isGodsHelp = false;
 
@@ -45,7 +54,7 @@ public class Fight : MonoBehaviour {
 		if (isMiss || isGodsHelp) {
 			damage = 0;
 		} else {
-			float resist = onDef.getStats ().GetCurPoints ((int)statName.resist);
+			float resist = onDef.getStats ().GetStat ((int)statName.resist);
 
 			if (onAt.getEffect ((int)effect.breakout)) {
 				if (Effects.breakout ()) {
@@ -70,8 +79,9 @@ public class Fight : MonoBehaviour {
 			if (onAt.getEffect ((int)effect.vampirism)) {
 				BattleEventController.updHealth (Effects.vampirism (damage), onAt);
 			}
+			damage -= resist;
 		}
-
+		Debug.Log ("final damage" + damage);
 		BattleEventController.updHealth (-damage, onDef);
 	}
 }
