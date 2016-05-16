@@ -16,21 +16,21 @@ public class ToStay : MonoBehaviour {
 	}
 
 	public void toStay() {
-		animator.SetBool (0, false);
-		animator.SetBool (1, false);
-		animator.SetBool (2, false);
+		animator.SetBool ("isAttack", false);
+		animator.SetBool ("isDeath", false);
+		animator.SetBool ("isMagic", false);
 	}
 
 	public void toAttack() {
-		animator.SetBool (0, true);
+		animator.SetBool ("isAttack", true);
 	}
 
 	public void toMagic() {
-		animator.SetBool (1, true);
+		animator.SetBool ("isMagic", true);
 	}
 
 	public void toDeath() {
-		animator.SetBool (2, true);
+		animator.SetBool ("isDeath", true);
 	}
 
 	public void setReady () {

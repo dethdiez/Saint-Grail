@@ -46,20 +46,22 @@ public class BattleEventController : MonoBehaviour {
 	}
 
 	public static void toAttack(bool isHero) {
+		Debug.Log ("Event toAttack created with " + isHero);
 		string tag;
 		if (isHero)
 			tag = "Hero";
 		else
 			tag = "Enemy";
-		GameObject.FindGameObjectWithTag(tag).GetComponent<ToStay> ().toAttack ();
+		Debug.Log ("tag " + tag);
+		GameObject.FindGameObjectWithTag (tag).GetComponent<ToStay> ().toAttack ();
 	}
 
 	public static void toMagic(bool isHero) {
 		string tag;
-		if (isHero)
+		//if (isHero)
 			tag = "Hero";
-		else
-			tag = "Enemy";
+		//else
+			//tag = "Enemy";
 		GameObject.FindGameObjectWithTag(tag).GetComponent<ToStay> ().toMagic ();
 	}
 

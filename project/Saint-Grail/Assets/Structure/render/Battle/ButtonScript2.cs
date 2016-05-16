@@ -22,6 +22,7 @@ public class ButtonScript2 : MonoBehaviour {
 	}
 
 	public void step() {
+		Debug.Log ("button clicked, method step");
 		Fight.step (EventController.hero, EventController.enemy);
 	}
 }

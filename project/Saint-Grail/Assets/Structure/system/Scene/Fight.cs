@@ -15,6 +15,7 @@ public class Fight : MonoBehaviour {
 	}
 
 	public static void step(Hero hero, Enemy enemy) {
+		Debug.Log ("New fight step");
 		BattleEventController.toAttack (true);
 		hit (hero, enemy);
 		BattleEventController.toAttack (false);
