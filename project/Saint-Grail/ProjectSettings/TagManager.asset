@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Stone
+  - enemy
+  - Hero
   layers:
   - Default
   - TransparentFX

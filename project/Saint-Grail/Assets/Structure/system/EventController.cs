@@ -4,6 +4,7 @@ using Statistics;
 
 public class EventController : MonoBehaviour {
 
+
 	public static Hero hero;
 	public static Enemy enemy;
 
@@ -19,9 +20,10 @@ public class EventController : MonoBehaviour {
 
 	public static void goBattle(Enemy monster) {
 		Debug.Log ("Event goBattle created");
-		isBattle = true;
 		enemy = monster;
+//		Debug.Log ("ss " + enemy.getStats ().GetStat (0));
 		ToBattle.showWindow ();
+		isBattle = true;
 	}
 
 	public static bool checkBattle() {
@@ -79,6 +81,8 @@ public class EventController : MonoBehaviour {
 		FieldCreator.setNumber (0);
 		Application.LoadLevel ("free");
 	}
+
+
 
 	private static bool isBattle = false;
 }

@@ -16,8 +16,28 @@ public class ToStay : MonoBehaviour {
 	}
 
 	public void toStay() {
-		animator.SetBool ("isAttack", false);
-		animator.SetBool ("isMagic", false);
-		animator.SetBool ("isDeath", false);
+		animator.SetBool (0, false);
+		animator.SetBool (1, false);
+		animator.SetBool (2, false);
+	}
+
+	public void toAttack() {
+		animator.SetBool (0, true);
+	}
+
+	public void toMagic() {
+		animator.SetBool (1, true);
+	}
+
+	public void toDeath() {
+		animator.SetBool (2, true);
+	}
+
+	public void setReady () {
+		BattleEventController.setReady (true);
+	}
+
+	public void setNotReady () {
+		BattleEventController.setReady (false);
 	}
 }

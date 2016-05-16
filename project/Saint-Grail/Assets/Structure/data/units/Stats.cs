@@ -10,11 +10,15 @@ namespace Statistics
 
 		// Use this for initialization
 		void Start () {
+			Debug.Log ("Stats created");
 			stat = new float[4];
 			NewStats ();
 		}
 
 		public void NewStats (float dam=0, float res=0, float hp=0, float ep=0, float lp=0){
+			Debug.Log ("New Stats");
+			stat = new float[5];
+			curPoints = new float[5];
 			stat [(int)statName.damage] = dam;
 			stat [(int)statName.resist] = res;
 			stat [(int)statName.health] = hp;
@@ -58,6 +62,7 @@ namespace Statistics
 		}
 
 		public void setDefaultStats (int t) {
+			Debug.Log ("setting default stats");
 			switch (t) {
 			case (int)heroType.jungle:
 				NewStats (9, 4, 30, 10, 2);

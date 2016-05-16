@@ -15,7 +15,18 @@ public class Fight : MonoBehaviour {
 	}
 
 	public static void step(Hero hero, Enemy enemy) {
-
+		BattleEventController.toAttack (true);
+		hit (hero, enemy);
+		BattleEventController.toAttack (false);
+		hit (enemy, hero);
+		if (hero.getAffect ((int)affect.poison).time > 0) {
+			BattleEventController.updHealth (hero.getAffect ((int)affect.poison).value, hero);
+			hero.decAffectTime ((int)affect.poison);
+		}
+		if (enemy.getAffect ((int)affect.poison).time > 0) {
+			BattleEventController.updHealth (enemy.getAffect ((int)affect.poison).value, enemy);
+			enemy.decAffectTime ((int)affect.poison);
+		}
 	}
 
 	public static void hit (Unit onAt, Unit onDef) {
@@ -25,8 +36,7 @@ public class Fight : MonoBehaviour {
 
 		if (onAt.getAffect ((int)affect.missing).time > 0) {
 			isMiss = Effects.miss ();
-			if (isMiss)
-				onAt.decAffectTime ((int)affect.missing);
+			onAt.decAffectTime ((int)affect.missing);
 		} else if (onDef.getEffect ((int)effect.divineTear)) {
 			isGodsHelp = Effects.divineTear ();
 		}
@@ -57,7 +67,7 @@ public class Fight : MonoBehaviour {
 			}
 
 			if (onAt.getEffect ((int)effect.vampirism)) {
-				BattleEventController.updHealth (Effects.vampirism (damage), onDef);
+				BattleEventController.updHealth (Effects.vampirism (damage), onAt);
 			}
 		}
 

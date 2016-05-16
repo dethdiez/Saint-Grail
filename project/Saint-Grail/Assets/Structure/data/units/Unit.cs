@@ -11,7 +11,8 @@ public class Unit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+//		stats = new Stats ();
+		Debug.Log ("Unit Created");
 	}
 	
 	// Update is called once per frame
@@ -44,7 +45,7 @@ public class Unit : MonoBehaviour {
 		aff [name].time -= 1;
 	}
 
-	protected Stats stats;
-	protected bool[] effects;
-	protected affects[] aff;
+	protected Stats stats = new Stats ();
+	protected bool[] effects = new bool[7];
+	protected affects[] aff = new affects[7];
 }

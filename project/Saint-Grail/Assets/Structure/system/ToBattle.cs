@@ -11,7 +11,7 @@ public class ToBattle : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		Debug.Log (isRendering);
+//		Debug.Log (isRendering);
 		if (isRendering) {
 			Debug.Log ("OnGui activated");
 			RenderController.lockScene (true);

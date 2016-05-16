@@ -170,6 +170,7 @@ GameObject:
   - 114: {fileID: 58810286}
   - 60: {fileID: 58810288}
   - 114: {fileID: 58810285}
+  - 114: {fileID: 58810289}
   m_Layer: 5
   m_Name: left_hand
   m_TagString: Untagged
@@ -236,7 +237,18 @@ MonoBehaviour:
   m_Group: {fileID: 906656195}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 58810289}
+        m_MethodName: defClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -300,6 +312,17 @@ PolygonCollider2D:
       - {x: 0.21550441, y: 0.38971913}
       - {x: 0.18084554, y: 0.41159812}
       - {x: 0.16953133, y: 0.43285623}
+--- !u!114 &58810289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 58810283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &64825721
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +567,7 @@ GameObject:
   - 114: {fileID: 128948895}
   - 114: {fileID: 128948897}
   - 60: {fileID: 128948894}
+  - 114: {fileID: 128948898}
   m_Layer: 5
   m_Name: left_hand
   m_TagString: Untagged
@@ -661,10 +685,32 @@ MonoBehaviour:
   m_Group: {fileID: 166540309}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 128948898}
+        m_MethodName: attackClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &128948898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 128948892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &133689458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,9 +1066,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 150208, guid: 6519d8cea1fec4e44b055cdfcaebd006, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6519d8cea1fec4e44b055cdfcaebd006, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &200069598 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 150208, guid: 6519d8cea1fec4e44b055cdfcaebd006, type: 2}
+  m_PrefabInternal: {fileID: 200069597}
+--- !u!95 &200069599
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200069598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a25214e777e31504d9d5b43b9069fc93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &200069600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200069598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8bc2869b80b8742b5f8ae3a4a2256b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 200069599}
 --- !u!1 &215277813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,6 +1238,7 @@ GameObject:
   - 114: {fileID: 243440419}
   - 60: {fileID: 243440421}
   - 114: {fileID: 243440418}
+  - 114: {fileID: 243440422}
   m_Layer: 5
   m_Name: chest
   m_TagString: Untagged
@@ -1221,7 +1305,18 @@ MonoBehaviour:
   m_Group: {fileID: 906656195}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 243440422}
+        m_MethodName: defClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -1288,6 +1383,17 @@ PolygonCollider2D:
       - {x: -0.109329596, y: -0.15723123}
       - {x: -0.15093644, y: 0.0046239262}
       - {x: -0.16664372, y: 0.10720539}
+--- !u!114 &243440422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243440416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &248301347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,6 +1580,7 @@ GameObject:
   - 114: {fileID: 289675370}
   - 114: {fileID: 289675372}
   - 60: {fileID: 289675369}
+  - 114: {fileID: 289675373}
   m_Layer: 5
   m_Name: chest
   m_TagString: Untagged
@@ -1591,10 +1698,32 @@ MonoBehaviour:
   m_Group: {fileID: 166540309}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 289675373}
+        m_MethodName: attackClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &289675373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289675367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &294035311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,6 +1736,7 @@ GameObject:
   - 114: {fileID: 294035314}
   - 60: {fileID: 294035316}
   - 114: {fileID: 294035313}
+  - 114: {fileID: 294035317}
   m_Layer: 5
   m_Name: left_leg
   m_TagString: Untagged
@@ -1673,7 +1803,18 @@ MonoBehaviour:
   m_Group: {fileID: 906656195}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 294035317}
+        m_MethodName: defClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -1730,6 +1871,17 @@ PolygonCollider2D:
       - {x: 0.33373588, y: -0.4950474}
       - {x: 0.033148546, y: -0.76218724}
       - {x: 0.034727905, y: -0.3616994}
+--- !u!114 &294035317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294035311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &323173729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,6 +1981,7 @@ GameObject:
   - 124: {fileID: 375785217}
   - 81: {fileID: 375785216}
   - 114: {fileID: 375785221}
+  - 114: {fileID: 375785222}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1917,6 +2070,20 @@ MonoBehaviour:
   m_EventMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &375785222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375785215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a352b959e74d4cadf1a93214e7934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {fileID: 1657366205}
+  - {fileID: 1390207550}
 --- !u!1 &387742164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,6 +2378,7 @@ GameObject:
   - 114: {fileID: 585482796}
   - 114: {fileID: 585482798}
   - 60: {fileID: 585482795}
+  - 114: {fileID: 585482799}
   m_Layer: 5
   m_Name: head
   m_TagString: Untagged
@@ -2328,10 +2496,32 @@ MonoBehaviour:
   m_Group: {fileID: 166540309}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585482799}
+        m_MethodName: attackClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &585482799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 585482793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &609177489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,6 +2679,7 @@ GameObject:
   - 222: {fileID: 671853477}
   - 114: {fileID: 671853476}
   - 114: {fileID: 671853475}
+  - 114: {fileID: 671853478}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -2588,6 +2779,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 671853473}
+--- !u!114 &671853478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671853473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d005b6629b447d4f86d61b1bf1d4c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &673050781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,6 +2802,7 @@ GameObject:
   - 114: {fileID: 673050784}
   - 114: {fileID: 673050786}
   - 60: {fileID: 673050783}
+  - 114: {fileID: 673050787}
   m_Layer: 5
   m_Name: right_hand
   m_TagString: Untagged
@@ -2717,10 +2920,32 @@ MonoBehaviour:
   m_Group: {fileID: 166540309}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 673050787}
+        m_MethodName: attackClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &673050787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 673050781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &676559456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,6 +4006,7 @@ GameObject:
   - 60: {fileID: 1104251463}
   - 114: {fileID: 1104251460}
   - 114: {fileID: 1104251458}
+  - 114: {fileID: 1104251459}
   m_Layer: 5
   m_Name: right_leg (1)
   m_TagString: Untagged
@@ -3833,6 +4059,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &1104251459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104251456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1104251460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3874,7 +4111,18 @@ MonoBehaviour:
   m_Group: {fileID: 906656195}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1104251459}
+        m_MethodName: defClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -4463,7 +4711,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1379025201}
   m_OnClick:
     m_PersistentCalls:
@@ -4512,6 +4760,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1390207549}
   - 212: {fileID: 1390207548}
+  - 114: {fileID: 1390207550}
   m_Layer: 0
   m_Name: monster_bar
   m_TagString: Untagged
@@ -4567,6 +4816,22 @@ Transform:
   - {fileID: 187148949}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!114 &1390207550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1390207547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee95f70c79d66049966a505c6a9a89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 1427253552}
+  energy: {fileID: 578825686}
+  attack: {fileID: 2012289703}
+  defence: {fileID: 1332177546}
+  stats: {fileID: 0}
 --- !u!1 &1391765099
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,6 +5098,7 @@ GameObject:
   - 114: {fileID: 1467903308}
   - 114: {fileID: 1467903310}
   - 60: {fileID: 1467903307}
+  - 114: {fileID: 1467903311}
   m_Layer: 5
   m_Name: right_leg
   m_TagString: Untagged
@@ -4932,7 +5198,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -4953,10 +5219,32 @@ MonoBehaviour:
   m_Group: {fileID: 166540309}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1467903311}
+        m_MethodName: attackClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &1467903311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1467903305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1528961382
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,6 +5489,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1657366204}
   - 212: {fileID: 1657366203}
+  - 114: {fileID: 1657366205}
   m_Layer: 0
   m_Name: hero_bar
   m_TagString: Untagged
@@ -5256,6 +5545,22 @@ Transform:
   - {fileID: 387742165}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &1657366205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657366202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee95f70c79d66049966a505c6a9a89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 1764540653}
+  energy: {fileID: 1047358350}
+  attack: {fileID: 1034323854}
+  defence: {fileID: 1907109270}
+  stats: {fileID: 0}
 --- !u!1 &1682939840
 GameObject:
   m_ObjectHideFlags: 0
@@ -6017,6 +6322,7 @@ GameObject:
   - 114: {fileID: 1892078944}
   - 114: {fileID: 1892078946}
   - 60: {fileID: 1892078943}
+  - 114: {fileID: 1892078947}
   m_Layer: 5
   m_Name: left_leg
   m_TagString: Untagged
@@ -6135,10 +6441,32 @@ MonoBehaviour:
   m_Group: {fileID: 166540309}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1892078947}
+        m_MethodName: attackClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &1892078947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1892078941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1907109270
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,6 +6597,10 @@ Prefab:
     - target: {fileID: 460072, guid: 71c64147d76899949bd1eb770b99d2d8, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 140370, guid: 71c64147d76899949bd1eb770b99d2d8, type: 2}
+      propertyPath: m_TagString
+      value: Hero
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71c64147d76899949bd1eb770b99d2d8, type: 2}
@@ -6627,6 +6959,7 @@ GameObject:
   - 114: {fileID: 2016684715}
   - 60: {fileID: 2016684717}
   - 114: {fileID: 2016684714}
+  - 114: {fileID: 2016684718}
   m_Layer: 5
   m_Name: head
   m_TagString: Untagged
@@ -6693,7 +7026,18 @@ MonoBehaviour:
   m_Group: {fileID: 906656195}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2016684718}
+        m_MethodName: defClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -6758,6 +7102,17 @@ PolygonCollider2D:
       - {x: -0.11941795, y: 0.40792355}
       - {x: -0.15307342, y: 0.4942383}
       - {x: -0.19053413, y: 0.60573363}
+--- !u!114 &2016684718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2016684712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2020886240
 GameObject:
   m_ObjectHideFlags: 0
@@ -6769,6 +7124,7 @@ GameObject:
   - 222: {fileID: 2020886244}
   - 114: {fileID: 2020886243}
   - 114: {fileID: 2020886242}
+  - 114: {fileID: 2020886245}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -6832,7 +7188,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2020886243}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2020886245}
+        m_MethodName: step
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2020886243
@@ -6868,6 +7235,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2020886240}
+--- !u!114 &2020886245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020886240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d005b6629b447d4f86d61b1bf1d4c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2038528810
 GameObject:
   m_ObjectHideFlags: 0
@@ -6966,6 +7344,7 @@ GameObject:
   - 114: {fileID: 2071045889}
   - 114: {fileID: 2071045891}
   - 60: {fileID: 2071045888}
+  - 114: {fileID: 2071045892}
   m_Layer: 5
   m_Name: right_hand
   m_TagString: Untagged
@@ -7091,10 +7470,32 @@ MonoBehaviour:
   m_Group: {fileID: 906656195}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2071045892}
+        m_MethodName: defClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &2071045892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2071045886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e00a8a74e89bd41b57db431b7ae42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2073701083
 GameObject:
   m_ObjectHideFlags: 0

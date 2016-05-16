@@ -173,6 +173,7 @@ MonoBehaviour:
   - {fileID: 159872, guid: 2d1d92f32a8d45f468008ad3a3b8a8a2, type: 2}
   - {fileID: 160688, guid: 281fc94b1903e764692e75280e84fd7f, type: 2}
   stone: {fileID: 182704, guid: d2c8358340a95504580612bf3564078e, type: 2}
+  hero: {fileID: 1837777650}
 --- !u!4 &299683625
 Transform:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class FieldCreator : MonoBehaviour {
 	private int[][] field;
 	public GameObject[] enemy;
 	public GameObject stone;
+	public GameObject hero;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,9 @@ public class FieldCreator : MonoBehaviour {
 		for (int i = 0; i < 19; i++)
 			field [i] = new int[14];
 		loadField (fieldNumber);
+
+		EventController.hero = hero.GetComponent<Hero>();
+		Debug.Log (EventController.hero.getStats ().GetStat (0));
 	}
 	
 	// Update is called once per frame
@@ -29,7 +33,7 @@ public class FieldCreator : MonoBehaviour {
 		default:
 			for (int i = 0; i < 2; i++) {
 				GameObject enemyClone;
-				Vector3 pos = new Vector3 (-7.4f + (0.3f * 3 * i), -3.9f, 0);
+				Vector3 pos = new Vector3 (-7.4f + (0.3f * 10 * i), -3.9f, 0);
 				enemyClone = Instantiate (enemy [i], pos, Quaternion.identity) as GameObject;
 			}
 			GameObject stoneClone;

@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6192702}
   - 50: {fileID: 5072036}
   - 114: {fileID: 11438808}
+  - 114: {fileID: 11475104}
   m_Layer: 0
   m_Name: monster_2
   m_TagString: Untagged
@@ -74,6 +75,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: 0
+--- !u!114 &11475104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de35396abdc4cb40b89dba0366eff37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21201986
 SpriteRenderer:
   m_ObjectHideFlags: 1

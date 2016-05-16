@@ -4,9 +4,12 @@ using Statistics;
 
 public class BattleEventController : MonoBehaviour {
 
+	public Points[] points;
+
 	// Use this for initialization
 	void Start () {
-	
+		points [0].stats = EventController.hero.getStats ();
+		points [1].stats = EventController.enemy.getStats ();
 	}
 	
 	// Update is called once per frame
@@ -26,34 +29,54 @@ public class BattleEventController : MonoBehaviour {
 		unit.getStats ().UpdCurPoints ((int)statName.health, value);
 	}
 
-	public static void attackClick() {
-//		if (isAttackClicked)
-//			lastAttack.defaultScale ();
-		isAttackClicked = true;
-//		lastAttack = button;
-	}
-
 	public static void attackClick(bool value) {
-		//		if (isAttackClicked)
-		//			lastAttack.defaultScale ();
 		isAttackClicked = value;
 		BattleEventController.isBoth ();
-		//		lastAttack = button;
+		Debug.Log ("Event attackClick created, isAttackCliked = " + isAttackClicked);
 	}
 
 	public static void defenceClick(bool value) {
 		isDefenceClicked = value;
 		BattleEventController.isBoth ();
+		Debug.Log ("Event defenceClick created, isDefenceCliked = " + isDefenceClicked);
 	}
 
-	public static void isBoth() {
-		if (isAttackClicked && isDefenceClicked) {
-
-		}
+	public static bool isBoth() {
+		return isAttackClicked && isDefenceClicked;
 	}
 
-//	private static Button lastAttack;
-//	private static Button lastDefence;
+	public static void toAttack(bool isHero) {
+		string tag;
+		if (isHero)
+			tag = "Hero";
+		else
+			tag = "Enemy";
+		GameObject.FindGameObjectWithTag(tag).GetComponent<ToStay> ().toAttack ();
+	}
+
+	public static void toMagic(bool isHero) {
+		string tag;
+		if (isHero)
+			tag = "Hero";
+		else
+			tag = "Enemy";
+		GameObject.FindGameObjectWithTag(tag).GetComponent<ToStay> ().toMagic ();
+	}
+
+	public static void toDeath(bool isHero) {
+		string tag;
+		if (isHero)
+			tag = "Hero";
+		else
+			tag = "Enemy";
+		GameObject.FindGameObjectWithTag(tag).GetComponent<ToStay> ().toDeath ();
+	}
+
+	public static void setReady (bool value) {
+		GameObject.FindGameObjectWithTag ("Hero").GetComponent<Animator> ().SetBool ("isReady", value);
+		GameObject.FindGameObjectWithTag ("Enemy").GetComponent<Animator> ().SetBool ("isReady", value);
+	}
+
 	private static bool isAttackClicked;
 	private static bool isDefenceClicked;
 }
