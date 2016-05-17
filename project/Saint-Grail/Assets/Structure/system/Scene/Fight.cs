@@ -113,7 +113,7 @@ public class Fight : MonoBehaviour {
 	}
 
 	public static void magicHit (Unit onDef) {
-		BattleEventController.updHealth (10, onDef);
+		BattleEventController.updHealth (-5, onDef);
 	}
 }
 

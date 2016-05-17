@@ -65,7 +65,7 @@ public class BattleEventController : MonoBehaviour {
 		Debug.Log ("Magic?");
 		string tag;
 		tag = "Hero";
-		GameObject.FindGameObjectWithTag(tag).GetComponent<ToStay> ().toMagic ();
+		GameObject.FindGameObjectWithTag (tag).GetComponent<ToStay> ().toMagic ();
 	}
 
 	public static void toDeath(bool isHero) {
