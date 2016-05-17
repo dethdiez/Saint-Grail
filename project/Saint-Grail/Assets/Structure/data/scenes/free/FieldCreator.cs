@@ -16,7 +16,7 @@ public class FieldCreator : MonoBehaviour {
 		loadField (fieldNumber);
 
 		EventController.hero = hero.GetComponent<Hero>();
-		Debug.Log (EventController.hero.getStats ().GetStat (0));
+//		Debug.Log (EventController.hero.getStats ().GetStat (0));
 	}
 	
 	// Update is called once per frame

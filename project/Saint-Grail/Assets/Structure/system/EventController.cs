@@ -82,7 +82,9 @@ public class EventController : MonoBehaviour {
 		Application.LoadLevel ("free");
 	}
 
-
+	public static void loadMainMenu() {
+		Application.LoadLevel ("MainMenu");
+	}
 
 	private static bool isBattle = false;
 }
