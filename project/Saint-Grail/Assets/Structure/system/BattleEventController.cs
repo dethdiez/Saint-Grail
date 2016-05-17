@@ -4,6 +4,9 @@ using Statistics;
 
 public class BattleEventController : MonoBehaviour {
 
+	public static int heroAttackRegion;
+	public static int heroDefRegion;
+
 	public Points[] points;
 
 	// Use this for initialization
@@ -29,14 +32,16 @@ public class BattleEventController : MonoBehaviour {
 		unit.getStats ().UpdCurPoints ((int)statName.health, value);
 	}
 
-	public static void attackClick(bool value) {
+	public static void attackClick(bool value, int region) {
 		isAttackClicked = value;
+		heroAttackRegion = region;
 		BattleEventController.isBoth ();
 		Debug.Log ("Event attackClick created, isAttackCliked = " + isAttackClicked);
 	}
 
-	public static void defenceClick(bool value) {
+	public static void defenceClick(bool value, int region) {
 		isDefenceClicked = value;
+		heroDefRegion = region;
 		BattleEventController.isBoth ();
 		Debug.Log ("Event defenceClick created, isDefenceCliked = " + isDefenceClicked);
 	}
@@ -57,11 +62,9 @@ public class BattleEventController : MonoBehaviour {
 	}
 
 	public static void toMagic(bool isHero) {
+		Debug.Log ("Magic?");
 		string tag;
-		//if (isHero)
-			tag = "Hero";
-		//else
-			//tag = "Enemy";
+		tag = "Hero";
 		GameObject.FindGameObjectWithTag(tag).GetComponent<ToStay> ().toMagic ();
 	}
 

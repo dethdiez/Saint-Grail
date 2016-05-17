@@ -2,8 +2,10 @@
 using System.Collections;
 using Statistics;
 
-public class Fight : MonoBehaviour {
+public enum attackType {meele, magic};
+public enum region {chest, head, left_hand, left_leg, right_hand, right_leg};
 
+public class Fight : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -15,18 +17,39 @@ public class Fight : MonoBehaviour {
 	
 	}
 
-	public static void step() {
+	public static void step(int type) {
 		Stats heroStats = EventController.hero.getStats();
 		Stats enemyStats = EventController.enemy.getStats();
-		Debug.Log ("New fight step");
-		BattleEventController.toAttack (true);
-		hit (EventController.hero, EventController.enemy);
-		BattleEventController.setReady (false);
-		while (GameObject.FindGameObjectWithTag ("Hero").GetComponent<ToStay> ().isReady () || GameObject.FindGameObjectWithTag ("Enemy").GetComponent<ToStay> ().isReady ()) {
-			
+		int enemyAttackRegion = Random.Range ((int)region.chest, (int)region.right_leg);
+		int enemyDefRegion = Random.Range ((int)region.chest, (int)region.right_leg);
+		Debug.Log ("New fight step with type = " + type);
+
+		switch (type) {
+		case (int)attackType.meele:
+			BattleEventController.toAttack (true);
+			hit (EventController.hero, EventController.enemy, BattleEventController.heroAttackRegion, enemyDefRegion);
+			BattleEventController.setReady (false);
+			break;
+
+		case (int)attackType.magic:
+			BattleEventController.toMagic (true);
+			magicHit (EventController.enemy);
+			BattleEventController.setReady (false);
+			break;
+
+		default:
+			Debug.Log ("Error! Wrong attack type");
+			break;
 		}
+
+		while (GameObject.FindGameObjectWithTag ("Hero").GetComponent<ToStay> ().isReady () 
+			|| GameObject.FindGameObjectWithTag ("Enemy").GetComponent<ToStay> ().isReady ()) {
+
+		}
+
 		BattleEventController.toAttack (false);
-		hit (EventController.enemy, EventController.hero);
+		hit (EventController.enemy, EventController.hero, enemyAttackRegion, BattleEventController.heroAttackRegion);
+
 		if (EventController.hero.getAffect ((int)affect.poison).time > 0) {
 			BattleEventController.updHealth (EventController.hero.getAffect ((int)affect.poison).value, EventController.hero);
 			EventController.hero.decAffectTime ((int)affect.poison);
@@ -37,7 +60,7 @@ public class Fight : MonoBehaviour {
 		}
 	}
 
-	public static void hit (Unit onAt, Unit onDef) {
+	public static void hit (Unit onAt, Unit onDef, int attackRegion, int defRegion) {
 		Debug.Log ("Hit!");
 		float damage = onAt.getStats ().GetStat ((int)statName.damage);
 		Debug.Log ("Default damage" + damage);
@@ -79,10 +102,18 @@ public class Fight : MonoBehaviour {
 			if (onAt.getEffect ((int)effect.vampirism)) {
 				BattleEventController.updHealth (Effects.vampirism (damage), onAt);
 			}
-			damage -= resist;
+
+			if (attackRegion == defRegion)
+				damage -= resist;
+			else
+				damage -= resist / 2;
 		}
 		Debug.Log ("final damage" + damage);
 		BattleEventController.updHealth (-damage, onDef);
+	}
+
+	public static void magicHit (Unit onDef) {
+		BattleEventController.updHealth (10, onDef);
 	}
 }
 

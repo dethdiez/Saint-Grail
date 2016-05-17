@@ -8,6 +8,8 @@ TagManager:
   - Stone
   - enemy
   - Hero
+  - Attack
+  - Defence
   layers:
   - Default
   - TransparentFX

@@ -26,6 +26,7 @@ public class ToStay : MonoBehaviour {
 	}
 
 	public void toMagic() {
+		Debug.Log ("Magic! Unit with tag " + gameObject.tag);
 		animator.SetBool ("isMagic", true);
 	}
 

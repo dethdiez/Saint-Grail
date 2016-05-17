@@ -14,14 +14,14 @@ public class ButtonScript : MonoBehaviour {
 		//isBoth ();
 	}
 
-	public void attackClick() {
+	public void attackClick(int region) {
 		Debug.Log ("attack toggle selected with " + gameObject.GetComponent<Toggle>().isOn);
-		BattleEventController.attackClick (gameObject.GetComponent<Toggle>().isOn);
+		BattleEventController.attackClick (gameObject.GetComponent<Toggle>().isOn, region);
 	}
 
-	public void defClick() {
+	public void defClick(int region) {
 		Debug.Log ("defence toggle selected");
-		BattleEventController.defenceClick (true);
+		BattleEventController.defenceClick (true, region);
 	}
 
 

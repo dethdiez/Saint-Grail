@@ -21,8 +21,8 @@ public class ButtonScript2 : MonoBehaviour {
 			gameObject.GetComponent<Button> ().interactable = false;
 	}
 
-	public void step() {
+	public void step(int type) {
 		Debug.Log ("button clicked, method step");
-		Fight.step ();
+		Fight.step (type);
 	}
 }
