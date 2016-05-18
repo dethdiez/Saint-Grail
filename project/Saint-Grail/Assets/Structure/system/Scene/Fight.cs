@@ -67,6 +67,15 @@ public class Fight : MonoBehaviour {
 			BattleEventController.updHealth (EventController.enemy.getAffect ((int)affect.poison).value, EventController.enemy);
 			EventController.enemy.decAffectTime ((int)affect.poison);
 		}
+
+//		Debug.Log ("Fight! Current health = " + enemyStats.GetCurPoints ((int)statName.health));
+		if (enemyStats.GetCurPoints ((int)statName.health) == 0.0f) {
+			BattleEventController.toDeath (false);
+		}
+
+		if (heroStats.GetCurPoints ((int)statName.health) == 0) {
+			BattleEventController.toDeath (true);
+		}
 	}
 
 	public static void hit (Unit onAt, Unit onDef, int attackRegion, int defRegion) {

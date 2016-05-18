@@ -74,12 +74,16 @@ public class BattleEventController : MonoBehaviour {
 	}
 
 	public static void toDeath(bool isHero) {
+		Debug.Log ("Event toDeath created with " + isHero);
 		string tag;
 		if (isHero)
 			tag = "Hero";
 		else
 			tag = "Enemy";
-		GameObject.FindGameObjectWithTag(tag).GetComponent<ToStay> ().toDeath ();
+		Debug.Log ("BEC. tag " + tag);
+		GameObject obj;
+		obj = GameObject.FindGameObjectWithTag (tag);
+		obj.GetComponent<ToStay> ().toDeath ();
 	}
 
 	public static void setReady (bool value) {
