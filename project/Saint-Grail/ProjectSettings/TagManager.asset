@@ -10,6 +10,7 @@ TagManager:
   - Hero
   - Attack
   - Defence
+  - Item
   layers:
   - Default
   - TransparentFX
