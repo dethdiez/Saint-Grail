@@ -25,8 +25,10 @@ public class ButtonScript : MonoBehaviour {
 	}
 
 	public void toDefault () {
-		gameObject.GetComponent<Toggle> ().isOn = false;
-		Debug.Log ("ButtonScript. Try to default. Toggle isOn of object named " + gameObject.name + " = " + gameObject.GetComponent<Toggle> ().isOn);
+		if (gameObject.GetComponent<Toggle> ().isOn) {
+			gameObject.GetComponent<Toggle> ().isOn = false;
+			Debug.Log ("ButtonScript. Try to default. Toggle isOn of object named " + gameObject.name + " = " + gameObject.GetComponent<Toggle> ().isOn);
+		}
 	}
 
 }

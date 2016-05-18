@@ -23,7 +23,7 @@ public class ToStay : MonoBehaviour {
 
 	public void toAttack() {
 		animator.SetBool ("isAttack", true);
-		Debug.Log ("ToStay. isAttack = " + animator.GetBool("isAttack"));
+		Debug.Log ("ToStay. Unit name " + gameObject.name + " isAttack = " + animator.GetBool("isAttack"));
 		Debug.Log ("End of branch.");
 	}
 
@@ -38,11 +38,13 @@ public class ToStay : MonoBehaviour {
 	}
 
 	public void setReady () {
+		Debug.Log ("set ready to true");
 		BattleEventController.setReady (true);
 		isTrue = true;
 	}
 
 	public void setNotReady () {
+		Debug.Log ("set not ready to true");
 		BattleEventController.setReady (false);
 		isTrue = false;
 	}
