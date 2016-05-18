@@ -38,8 +38,10 @@ namespace Statistics
 			curPoints [name] += upd;
 			if (curPoints [name] > stat [name])
 				curPoints [name] = stat [name];
-			if (curPoints [name] < 0)
+			if (curPoints [name] < 0) {
 				curPoints [name] = 0;
+
+			}
 		}
 	
 		//Update is called once per frame

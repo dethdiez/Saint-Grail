@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Statistics;
+using UnityEngine.UI;
 
 public class BattleEventController : MonoBehaviour {
 
@@ -80,6 +81,16 @@ public class BattleEventController : MonoBehaviour {
 	public static void setReady (bool value) {
 		GameObject.FindGameObjectWithTag ("Hero").GetComponent<Animator> ().SetBool ("isReady", value);
 		GameObject.FindGameObjectWithTag ("Enemy").GetComponent<Animator> ().SetBool ("isReady", value);
+	}
+
+	public static void toDefault () {
+		Debug.Log ("Try to set toggles to default");
+		GameObject[] AttObj = GameObject.FindGameObjectsWithTag ("Attack");
+		GameObject[] DefObj = GameObject.FindGameObjectsWithTag ("Defence");
+		for (int i = 0; i < 6; i++) {
+			AttObj [i].GetComponent<ButtonScript> ().toDefault ();
+			DefObj [i].GetComponent<ButtonScript> ().toDefault ();
+		}
 	}
 
 	private static bool isAttackClicked;

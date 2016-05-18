@@ -20,9 +20,13 @@ public class ButtonScript : MonoBehaviour {
 	}
 
 	public void defClick(int region) {
-		Debug.Log ("defence toggle selected");
-		BattleEventController.defenceClick (true, region);
+		Debug.Log ("defence toggle selected with " + gameObject.GetComponent<Toggle>().isOn);
+		BattleEventController.defenceClick (gameObject.GetComponent<Toggle>().isOn, region);
 	}
 
+	public void toDefault () {
+		gameObject.GetComponent<Toggle> ().isOn = false;
+		Debug.Log ("ButtonScript. Try to default. Toggle isOn of object named " + gameObject.name + " = " + gameObject.GetComponent<Toggle> ().isOn);
+	}
 
 }

@@ -107,9 +107,14 @@ public class Fight : MonoBehaviour {
 				damage -= resist;
 			else
 				damage -= resist / 2;
+
 		}
 		Debug.Log ("final damage" + damage);
 		BattleEventController.updHealth (-damage, onDef);
+
+
+
+		BattleEventController.toDefault ();
 	}
 
 	public static void magicHit (Unit onDef) {
