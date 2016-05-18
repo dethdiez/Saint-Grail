@@ -23,11 +23,14 @@ public class ToStay : MonoBehaviour {
 
 	public void toAttack() {
 		animator.SetBool ("isAttack", true);
+		Debug.Log ("ToStay. isAttack = " + animator.GetBool("isAttack"));
+		Debug.Log ("End of branch.");
 	}
 
 	public void toMagic() {
 		Debug.Log ("Magic! Unit with tag " + gameObject.tag);
 		animator.SetBool ("isMagic", true);
+		Debug.Log ("End of branch.");
 	}
 
 	public void toDeath() {

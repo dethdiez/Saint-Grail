@@ -26,6 +26,7 @@ public class Fight : MonoBehaviour {
 
 		switch (type) {
 		case (int)attackType.meele:
+			Debug.Log ("Fight. Step. Meele.");
 			BattleEventController.toAttack (true);
 			hit (EventController.hero, EventController.enemy, BattleEventController.heroAttackRegion, enemyDefRegion);
 			BattleEventController.setReady (false);
@@ -44,10 +45,12 @@ public class Fight : MonoBehaviour {
 
 		while (GameObject.FindGameObjectWithTag ("Hero").GetComponent<ToStay> ().isReady () 
 			|| GameObject.FindGameObjectWithTag ("Enemy").GetComponent<ToStay> ().isReady ()) {
-
+			int i;
+			i = 1;
+			i += 1;
 		}
 
-		BattleEventController.toAttack (false);
+		BattleEventController.toAttack (false); //не выполняется?
 		hit (EventController.enemy, EventController.hero, enemyAttackRegion, BattleEventController.heroAttackRegion);
 
 		if (EventController.hero.getAffect ((int)affect.poison).time > 0) {
@@ -58,6 +61,8 @@ public class Fight : MonoBehaviour {
 			BattleEventController.updHealth (EventController.enemy.getAffect ((int)affect.poison).value, EventController.enemy);
 			EventController.enemy.decAffectTime ((int)affect.poison);
 		}
+
+		BattleEventController.toDefault ();
 	}
 
 	public static void hit (Unit onAt, Unit onDef, int attackRegion, int defRegion) {
@@ -111,10 +116,6 @@ public class Fight : MonoBehaviour {
 		}
 		Debug.Log ("final damage" + damage);
 		BattleEventController.updHealth (-damage, onDef);
-
-
-
-		BattleEventController.toDefault ();
 	}
 
 	public static void magicHit (Unit onDef) {

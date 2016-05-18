@@ -22,7 +22,7 @@ public class ButtonScript2 : MonoBehaviour {
 	}
 
 	public void step(int type) {
-		Debug.Log ("button clicked, method step");
+		Debug.Log ("Action button clicked, method step. Type = " + type);
 		Fight.step (type);
 	}
 }

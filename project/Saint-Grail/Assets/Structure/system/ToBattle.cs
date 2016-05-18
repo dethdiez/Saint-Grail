@@ -13,7 +13,7 @@ public class ToBattle : MonoBehaviour {
 	void OnGUI () {
 //		Debug.Log (isRendering);
 		if (isRendering) {
-			Debug.Log ("OnGui activated");
+//			Debug.Log ("OnGui activated");
 			RenderController.lockScene (true);
 			GUI.Box (new Rect (Screen.width / 2 - 50, Screen.height / 2 - 140, 100, 40), "Start Battle?");
 			if (GUI.Button (new Rect (Screen.width / 2 - 25, Screen.height / 2 - 60, 50, 40), "Yes")) {

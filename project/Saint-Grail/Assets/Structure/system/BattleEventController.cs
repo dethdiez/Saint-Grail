@@ -38,6 +38,7 @@ public class BattleEventController : MonoBehaviour {
 		heroAttackRegion = region;
 		BattleEventController.isBoth ();
 		Debug.Log ("Event attackClick created, isAttackCliked = " + isAttackClicked);
+		Debug.Log ("BattleEventController. attackClick. region = " + heroAttackRegion);
 	}
 
 	public static void defenceClick(bool value, int region) {
@@ -45,6 +46,7 @@ public class BattleEventController : MonoBehaviour {
 		heroDefRegion = region;
 		BattleEventController.isBoth ();
 		Debug.Log ("Event defenceClick created, isDefenceCliked = " + isDefenceClicked);
+		Debug.Log ("BattleEventController. defenceClick. region = " + heroDefRegion);
 	}
 
 	public static bool isBoth() {
@@ -58,8 +60,10 @@ public class BattleEventController : MonoBehaviour {
 			tag = "Hero";
 		else
 			tag = "Enemy";
-		Debug.Log ("tag " + tag);
-		GameObject.FindGameObjectWithTag (tag).GetComponent<ToStay> ().toAttack ();
+		Debug.Log ("BEC. tag " + tag);
+		GameObject obj;
+		obj = GameObject.FindGameObjectWithTag (tag);
+		obj.GetComponent<ToStay> ().toAttack ();
 	}
 
 	public static void toMagic(bool isHero) {
