@@ -17,6 +17,9 @@ public class FieldCreator : MonoBehaviour {
 		field = new int[19,14];
 		if (!isRendered)
 			loadField (fieldNumber);
+		else
+			Destroy (GameObject.Find ("monster_1(Clone)"));
+
 
 		EventController.hero = hero.GetComponent<Hero>();
 //		Debug.Log (EventController.hero.getStats ().GetStat (0));
