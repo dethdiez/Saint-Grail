@@ -11,7 +11,7 @@ public class FieldCreator : MonoBehaviour {
 	public GameObject[] item;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		field = new int[19,14];
 		loadField (fieldNumber);
 
@@ -194,6 +194,7 @@ public class FieldCreator : MonoBehaviour {
 
 	public static void setNumber (int num) {
 		fieldNumber = num;
+		Debug.Log ("New field for create, id = " + FieldCreator.fieldNumber);
 	}
 
 	private static int fieldNumber;
