@@ -21,7 +21,8 @@ public class FieldCreator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (hero.GetComponent<Transform> ().position.x > 1)
+			setObj (stone, 10, 1);
 	}
 
 	public void loadField (int id) {
@@ -178,7 +179,24 @@ public class FieldCreator : MonoBehaviour {
 			setObj (enemy [0], 11, 5);
 
 
+				
 			break;
+
+//		case 2:
+//			int i;
+//			setObj (hero, 10, 0);
+//			for (i = 0; i <= 18; i++) {
+//				if (i != 10)
+//					setObj (stone, i, 0);
+//				setObj (stone, i, 13);
+//			}
+//			for (i = 0; i <= 13; i++)
+//				if (i != 6) {
+//					setObj (stone, 0, i);
+//					setObj (stone, 18, i);
+//				}
+//					
+//			break;
 
 		default:
 			setObj (enemy [0], 0, 0);
