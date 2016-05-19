@@ -2,6 +2,7 @@
 using System.Collections;
 using Statistics;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class BattleEventController : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class BattleEventController : MonoBehaviour {
 	public static int heroDefRegion;
 
 	public Points[] points;
+	public GameObject panel;
 
 	// Use this for initialization
 	void Start () {
@@ -84,6 +86,9 @@ public class BattleEventController : MonoBehaviour {
 		GameObject obj;
 		obj = GameObject.FindGameObjectWithTag (tag);
 		obj.GetComponent<ToStay> ().toDeath ();
+
+//		BattleEventController.enablePanel ();
+
 	}
 
 	public static void setReady (bool value) {
@@ -100,6 +105,12 @@ public class BattleEventController : MonoBehaviour {
 			DefObj [i].GetComponent<ButtonScript> ().toDefault ();
 		}
 	}
+
+//	public void enablePanel() {
+//		panel.SetActive (true);
+//		Debug.Log ("enable panel! " + GameObject.Find ("Panel").activeInHierarchy);
+//		GameObject.Find ("Main Camera").GetComponent<Physics2DRaycaster> ().enabled = false;
+//	}
 
 	private static bool isAttackClicked;
 	private static bool isDefenceClicked;

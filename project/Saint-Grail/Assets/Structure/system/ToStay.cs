@@ -4,6 +4,7 @@ using System.Collections;
 public class ToStay : MonoBehaviour {
 
 	public Animator animator;
+	public GameObject panel;
 
 	// Use this for initialization
 	void Start () {
@@ -54,7 +55,7 @@ public class ToStay : MonoBehaviour {
 	}
 
 	public void death() {
-
+		panel.SetActive (true);
 	}
 
 	private bool isTrue;

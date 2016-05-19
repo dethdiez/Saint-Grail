@@ -10,10 +10,13 @@ public class FieldCreator : MonoBehaviour {
 	public GameObject hero;
 	public GameObject[] item;
 
+	public static bool isRendered;
+
 	// Use this for initialization
 	void Awake () {
 		field = new int[19,14];
-		loadField (fieldNumber);
+		if (!isRendered)
+			loadField (fieldNumber);
 
 		EventController.hero = hero.GetComponent<Hero>();
 //		Debug.Log (EventController.hero.getStats ().GetStat (0));
@@ -25,6 +28,8 @@ public class FieldCreator : MonoBehaviour {
 	}
 
 	public void loadField (int id) {
+		isRendered = true;
+
 		switch (id) {
 
 		case 1:
@@ -187,9 +192,14 @@ public class FieldCreator : MonoBehaviour {
 	}
 
 	public void setObj(GameObject obj, int x, int y) {
-		GameObject stoneClone;
+		GameObject Clone;
 		Vector3 stPos = new Vector3 (-7.4f + x * 0.6f, -3.9f + y * 0.6f, 0);
-		stoneClone = Instantiate (obj, stPos, Quaternion.identity) as GameObject;
+		Clone = Instantiate (obj, stPos, Quaternion.identity) as GameObject;
+		DontDestroyOnLoad (Clone);
+	}
+
+	public void destroyObj (GameObject obj) {
+		Destroy (obj);
 	}
 
 	public static void setNumber (int num) {
