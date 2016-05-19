@@ -159,8 +159,8 @@ public class FieldCreator : MonoBehaviour {
 			setObj (stone, 16, 9);
 			setObj (stone, 16, 11);
 			setObj (stone, 16, 13);
-			setObj (stone, 17, 1);
-			setObj (stone, 17, 7);
+			setObj (stone, 17, 0);
+			setObj (stone, 17, 6);
 			setObj (stone, 18, 1);
 			setObj (stone, 18, 2);
 			setObj (stone, 18, 3);
@@ -175,6 +175,9 @@ public class FieldCreator : MonoBehaviour {
 			setObj (stone, 18, 11);
 			setObj (stone, 18, 12);
 			setObj (stone, 18, 13);
+			setObj (enemy [0], 11, 5);
+
+
 			break;
 
 		default:
