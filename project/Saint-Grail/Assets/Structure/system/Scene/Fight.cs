@@ -48,33 +48,28 @@ public class Fight : MonoBehaviour {
 			break;
 		}
 
-//		while (GameObject.FindGameObjectWithTag ("Hero").GetComponent<ToStay> ().isReady () 
-//			|| GameObject.FindGameObjectWithTag ("Enemy").GetComponent<ToStay> ().isReady ()) {
-
-//		}
-
-		BattleEventController.toAttack (false);
-		//BattleEventController.setReady (true);
-		hit (EventController.enemy, EventController.hero, enemyAttackRegion, BattleEventController.heroAttackRegion);
-
-		Debug.Log ("EventControler hero time = " + EventController.hero.getAffect ((int)affect.poison).time);
-		Debug.Log ("EventControler hero time = " + EventController.enemy.getAffect ((int)affect.poison).time);
-		if (EventController.hero.getAffect ((int)affect.poison).time > 0) {
-			BattleEventController.updHealth (EventController.hero.getAffect ((int)affect.poison).value, EventController.hero);
-			EventController.hero.decAffectTime ((int)affect.poison);
-		}
 		if (EventController.enemy.getAffect ((int)affect.poison).time > 0) {
 			BattleEventController.updHealth (EventController.enemy.getAffect ((int)affect.poison).value, EventController.enemy);
 			EventController.enemy.decAffectTime ((int)affect.poison);
 		}
-
-//		Debug.Log ("Fight! Current health = " + enemyStats.GetCurPoints ((int)statName.health));
+			
+		Debug.Log ("Fight! Current health = " + enemyStats.GetCurPoints ((int)statName.health));
 		if (enemyStats.GetCurPoints ((int)statName.health) == 0.0f) {
 			BattleEventController.toDeath (false);
-		}
+		} else {
+			BattleEventController.toAttack (false);
+			hit (EventController.enemy, EventController.hero, enemyAttackRegion, BattleEventController.heroAttackRegion);
 
-		if (heroStats.GetCurPoints ((int)statName.health) == 0) {
-			BattleEventController.toDeath (true);
+			Debug.Log ("EventControler hero time = " + EventController.hero.getAffect ((int)affect.poison).time);
+			Debug.Log ("EventControler hero time = " + EventController.enemy.getAffect ((int)affect.poison).time);
+			if (EventController.hero.getAffect ((int)affect.poison).time > 0) {
+				BattleEventController.updHealth (EventController.hero.getAffect ((int)affect.poison).value, EventController.hero);
+				EventController.hero.decAffectTime ((int)affect.poison);
+			}
+
+			if (heroStats.GetCurPoints ((int)statName.health) == 0) {
+				BattleEventController.toDeath (true);
+			}
 		}
 	}
 
