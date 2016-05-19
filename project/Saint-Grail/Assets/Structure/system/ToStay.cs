@@ -56,6 +56,7 @@ public class ToStay : MonoBehaviour {
 
 	public void death() {
 		panel.SetActive (true);
+
 	}
 
 	private bool isTrue;
