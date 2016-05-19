@@ -78,7 +78,7 @@ public class EventController : MonoBehaviour {
 	}
 
 	public static void loadNew() {
-		FieldCreator.setNumber (0);
+		FieldCreator.setNumber (1);
 		Application.LoadLevel ("free");
 	}
 
