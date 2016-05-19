@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Structure/data/scenes/Battle.unity
+- path: Assets/Structure/data/scenes/free.unity
   isLoaded: 1
   isActive: 1
