@@ -53,5 +53,9 @@ public class ToStay : MonoBehaviour {
 		return isTrue;
 	}
 
+	public void death() {
+
+	}
+
 	private bool isTrue;
 }
